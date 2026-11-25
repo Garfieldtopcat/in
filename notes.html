@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes · Richard Lawson</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">richard<span>@</span>security:~$</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="notes.html" aria-current="page">notes</a>
+        <a href="contact.html">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Notes</h1>
+    <p class="lede">Short write-ups, checklists and things I want to remember. These are sample entries, so swap them for your own.</p>
+
+    <div class="filter" role="group" aria-label="Filter by tag">
+      <button type="button" data-tag="all" aria-pressed="true">all</button>
+      <button type="button" data-tag="awareness" aria-pressed="false">awareness</button>
+      <button type="button" data-tag="m365" aria-pressed="false">m365</button>
+      <button type="button" data-tag="grc" aria-pressed="false">grc</button>
+      <button type="button" data-tag="incident" aria-pressed="false">incident</button>
+    </div>
+
+    <ul class="notes" id="notes">
+      <li class="note" data-tags="awareness">
+        <div class="note-meta"><time datetime="2026-11-20">2026-11-20</time><span class="tag">awareness</span></div>
+        <h3><a href="#">Chasing overdue security training without annoying everyone</a></h3>
+        <p>What worked when nudging colleagues to complete their compliance e-learning.</p>
+      </li>
+      <li class="note" data-tags="m365">
+        <div class="note-meta"><time datetime="2026-11-05">2026-11-05</time><span class="tag">m365</span></div>
+        <h3><a href="#">A short Microsoft 365 hardening checklist</a></h3>
+        <p>The settings I check first in a new tenant.</p>
+      </li>
+      <li class="note" data-tags="grc">
+        <div class="note-meta"><time datetime="2026-10-18">2026-10-18</time><span class="tag">grc</span></div>
+        <h3><a href="#">Making a risk register people actually read</a></h3>
+        <p>Keeping it short, owned and tied to real decisions.</p>
+      </li>
+      <li class="note" data-tags="incident">
+        <div class="note-meta"><time datetime="2026-09-30">2026-09-30</time><span class="tag">incident</span></div>
+        <h3><a href="#">Phishing triage in 10 minutes</a></h3>
+        <p>A repeatable first-look process for reported emails.</p>
+      </li>
+      <li class="note" data-tags="grc awareness">
+        <div class="note-meta"><time datetime="2026-09-12">2026-09-12</time><span class="tag">grc</span><span class="tag">awareness</span></div>
+        <h3><a href="#">Writing security policies in plain English</a></h3>
+        <p>Policies people can follow without a glossary.</p>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Richard Lawson · Views are my own and not those of my employer.</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.filter button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tag = btn.dataset.tag;
+        document.querySelectorAll('.filter button').forEach(function (b) {
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        document.querySelectorAll('#notes .note').forEach(function (n) {
+          var show = tag === 'all' || n.dataset.tags.split(' ').indexOf(tag) !== -1;
+          n.hidden = !show;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

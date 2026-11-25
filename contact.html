@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Richard Lawson</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">richard<span>@</span>security:~$</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="notes.html">notes</a>
+        <a href="contact.html" aria-current="page">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Contact</h1>
+    <p class="lede">Happy to talk security, swap notes or hear feedback on anything here.</p>
+
+    <ul class="clean">
+      <li>Email: <span class="todo">[your public email]</span></li>
+      <li>LinkedIn: <span class="todo">[linkedin.com/in/your-profile]</span></li>
+      <li>GitHub: <span class="todo">[github.com/your-handle]</span></li>
+    </ul>
+
+    <h2>Send a message</h2>
+    <p><span class="todo">This form doesn't send anything yet. Connect it to a form service, or remove it and keep the links above.</span></p>
+    <form onsubmit="event.preventDefault(); alert('Form not connected yet.');">
+      <label>Name <input name="name" autocomplete="name" required></label>
+      <label>Email <input type="email" name="email" autocomplete="email" required></label>
+      <label>Message <textarea name="message" required></textarea></label>
+      <button class="btn" type="submit">send →</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Richard Lawson · Views are my own and not those of my employer.</div>
+  </footer>
+</body>
+</html>
